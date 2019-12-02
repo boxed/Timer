@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5BA3796D23951A5500492FA5 /* DesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3796C23951A5500492FA5 /* DesktopWindow.m */; };
+		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
+		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
+		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		AE4F2BA40CDD4394005D5F62 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AE4F2BA10CDD4394005D5F62 /* Localizable.strings */; };
+		AE4F2BB20CDD43CE005D5F62 /* CountDownView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4F2BA70CDD43CE005D5F62 /* CountDownView.m */; };
+		AE4F2BB30CDD43CE005D5F62 /* FlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4F2BA90CDD43CE005D5F62 /* FlatButton.m */; };
+		AE4F2BB40CDD43CE005D5F62 /* HUDWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4F2BAB0CDD43CE005D5F62 /* HUDWindow.m */; };
+		AE4F2BB50CDD43CE005D5F62 /* RoundCloseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4F2BAD0CDD43CE005D5F62 /* RoundCloseButton.m */; };
+		AE4F2BB60CDD43CE005D5F62 /* SweeperView.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4F2BAF0CDD43CE005D5F62 /* SweeperView.m */; };
+		AE4F2BB70CDD43CE005D5F62 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = AE4F2BB10CDD43CE005D5F62 /* Timer.m */; };
+		AE4F2BC30CDD4463005D5F62 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE4F2BC20CDD4463005D5F62 /* IOKit.framework */; };
+		AE4F2BE80CDDC6BF005D5F62 /* Untitled.icns in Resources */ = {isa = PBXBuildFile; fileRef = AE4F2BE60CDDC6BF005D5F62 /* Untitled.icns */; };
+		AE4F2BEE0CDDC6EA005D5F62 /* hud_titlebar-close-dark.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AE4F2BEA0CDDC6EA005D5F62 /* hud_titlebar-close-dark.tiff */; };
+		AE4F2BEF0CDDC6EA005D5F62 /* hud_titlebar-close.tiff in Resources */ = {isa = PBXBuildFile; fileRef = AE4F2BEB0CDDC6EA005D5F62 /* hud_titlebar-close.tiff */; };
+		AE4F2BF00CDDC6EA005D5F62 /* logo2-padded.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4F2BEC0CDDC6EA005D5F62 /* logo2-padded.png */; };
+		AE4F2BF10CDDC6EA005D5F62 /* Picture-4.png in Resources */ = {isa = PBXBuildFile; fileRef = AE4F2BED0CDDC6EA005D5F62 /* Picture-4.png */; };
+		AE9FE59C12F8A08000F2838A /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = AE9FE59B12F8A08000F2838A /* Entitlements.plist */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AE90F9E70D848D2E00BAADA3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29B97319FDCFA39411CA2CEA /* English */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = English; path = English.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		32CA4F630368D1EE00C91783 /* Timer_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer_Prefix.pch; sourceTree = "<group>"; };
+		5BA3796B23951A5500492FA5 /* DesktopWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DesktopWindow.h; sourceTree = "<group>"; };
+		5BA3796C23951A5500492FA5 /* DesktopWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DesktopWindow.m; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D1107320486CEB800E47090 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE4F2BA20CDD4394005D5F62 /* Swedish */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Swedish; path = Swedish.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AE4F2BA30CDD4394005D5F62 /* Swedish */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; name = Swedish; path = Swedish.lproj/MainMenu.nib; sourceTree = "<group>"; };
+		AE4F2BA60CDD43CE005D5F62 /* CountDownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountDownView.h; sourceTree = "<group>"; };
+		AE4F2BA70CDD43CE005D5F62 /* CountDownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountDownView.m; sourceTree = "<group>"; };
+		AE4F2BA80CDD43CE005D5F62 /* FlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlatButton.h; sourceTree = "<group>"; };
+		AE4F2BA90CDD43CE005D5F62 /* FlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlatButton.m; sourceTree = "<group>"; };
+		AE4F2BAA0CDD43CE005D5F62 /* HUDWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUDWindow.h; sourceTree = "<group>"; };
+		AE4F2BAB0CDD43CE005D5F62 /* HUDWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HUDWindow.m; sourceTree = "<group>"; };
+		AE4F2BAC0CDD43CE005D5F62 /* RoundCloseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundCloseButton.h; sourceTree = "<group>"; };
+		AE4F2BAD0CDD43CE005D5F62 /* RoundCloseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundCloseButton.m; sourceTree = "<group>"; };
+		AE4F2BAE0CDD43CE005D5F62 /* SweeperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SweeperView.h; sourceTree = "<group>"; };
+		AE4F2BAF0CDD43CE005D5F62 /* SweeperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SweeperView.m; sourceTree = "<group>"; };
+		AE4F2BB00CDD43CE005D5F62 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		AE4F2BB10CDD43CE005D5F62 /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		AE4F2BC20CDD4463005D5F62 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = /System/Library/Frameworks/IOKit.framework; sourceTree = "<absolute>"; };
+		AE4F2BE60CDDC6BF005D5F62 /* Untitled.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Untitled.icns; sourceTree = "<group>"; };
+		AE4F2BEA0CDDC6EA005D5F62 /* hud_titlebar-close-dark.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "hud_titlebar-close-dark.tiff"; sourceTree = "<group>"; };
+		AE4F2BEB0CDDC6EA005D5F62 /* hud_titlebar-close.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "hud_titlebar-close.tiff"; sourceTree = "<group>"; };
+		AE4F2BEC0CDDC6EA005D5F62 /* logo2-padded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo2-padded.png"; sourceTree = "<group>"; };
+		AE4F2BED0CDDC6EA005D5F62 /* Picture-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Picture-4.png"; sourceTree = "<group>"; };
+		AE9FE59B12F8A08000F2838A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		AEA705270D841CE900A603E1 /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D11072E0486CEB800E47090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				AE4F2BC30CDD4463005D5F62 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
+				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
+				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D1107320486CEB800E47090 /* Timer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Classes */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+			);
+			name = Timer;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5BA3796B23951A5500492FA5 /* DesktopWindow.h */,
+				5BA3796C23951A5500492FA5 /* DesktopWindow.m */,
+				AE4F2BA60CDD43CE005D5F62 /* CountDownView.h */,
+				AE4F2BA70CDD43CE005D5F62 /* CountDownView.m */,
+				AE4F2BA80CDD43CE005D5F62 /* FlatButton.h */,
+				AE4F2BA90CDD43CE005D5F62 /* FlatButton.m */,
+				AE4F2BAA0CDD43CE005D5F62 /* HUDWindow.h */,
+				AE4F2BAB0CDD43CE005D5F62 /* HUDWindow.m */,
+				AE4F2BAC0CDD43CE005D5F62 /* RoundCloseButton.h */,
+				AE4F2BAD0CDD43CE005D5F62 /* RoundCloseButton.m */,
+				AE4F2BAE0CDD43CE005D5F62 /* SweeperView.h */,
+				AE4F2BAF0CDD43CE005D5F62 /* SweeperView.m */,
+				AE4F2BB00CDD43CE005D5F62 /* Timer.h */,
+				AE4F2BB10CDD43CE005D5F62 /* Timer.m */,
+				32CA4F630368D1EE00C91783 /* Timer_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AE9FE59B12F8A08000F2838A /* Entitlements.plist */,
+				AE4F2BEA0CDDC6EA005D5F62 /* hud_titlebar-close-dark.tiff */,
+				AE4F2BEB0CDDC6EA005D5F62 /* hud_titlebar-close.tiff */,
+				AE4F2BEC0CDDC6EA005D5F62 /* logo2-padded.png */,
+				AE4F2BED0CDDC6EA005D5F62 /* Picture-4.png */,
+				AE4F2BE60CDDC6BF005D5F62 /* Untitled.icns */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
+				29B97318FDCFA39411CA2CEA /* MainMenu.nib */,
+				AE4F2BA10CDD4394005D5F62 /* Localizable.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AE4F2BC20CDD4463005D5F62 /* IOKit.framework */,
+				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
+				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8D1107260486CEB800E47090 /* Timer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Timer" */;
+			buildPhases = (
+				8D1107290486CEB800E47090 /* Resources */,
+				8D11072C0486CEB800E47090 /* Sources */,
+				8D11072E0486CEB800E47090 /* Frameworks */,
+				AE90F9E70D848D2E00BAADA3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Timer;
+			productInstallPath = "$(HOME)/Applications";
+			productName = Timer;
+			productReference = 8D1107320486CEB800E47090 /* Timer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+			};
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Timer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				Swedish,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* Timer */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8D1107260486CEB800E47090 /* Timer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8D1107290486CEB800E47090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */,
+				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
+				AE4F2BA40CDD4394005D5F62 /* Localizable.strings in Resources */,
+				AE4F2BE80CDDC6BF005D5F62 /* Untitled.icns in Resources */,
+				AE4F2BEE0CDDC6EA005D5F62 /* hud_titlebar-close-dark.tiff in Resources */,
+				AE4F2BEF0CDDC6EA005D5F62 /* hud_titlebar-close.tiff in Resources */,
+				AE4F2BF00CDDC6EA005D5F62 /* logo2-padded.png in Resources */,
+				AE4F2BF10CDDC6EA005D5F62 /* Picture-4.png in Resources */,
+				AE9FE59C12F8A08000F2838A /* Entitlements.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8D11072C0486CEB800E47090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				AE4F2BB20CDD43CE005D5F62 /* CountDownView.m in Sources */,
+				AE4F2BB30CDD43CE005D5F62 /* FlatButton.m in Sources */,
+				AE4F2BB40CDD43CE005D5F62 /* HUDWindow.m in Sources */,
+				5BA3796D23951A5500492FA5 /* DesktopWindow.m in Sources */,
+				AE4F2BB50CDD43CE005D5F62 /* RoundCloseButton.m in Sources */,
+				AE4F2BB60CDD43CE005D5F62 /* SweeperView.m in Sources */,
+				AE4F2BB70CDD43CE005D5F62 /* Timer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C165DFE840E0CC02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29B97318FDCFA39411CA2CEA /* MainMenu.nib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29B97319FDCFA39411CA2CEA /* English */,
+				AE4F2BA30CDD4394005D5F62 /* Swedish */,
+			);
+			name = MainMenu.nib;
+			sourceTree = "<group>";
+		};
+		AE4F2BA10CDD4394005D5F62 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AE4F2BA20CDD4394005D5F62 /* Swedish */,
+				AEA705270D841CE900A603E1 /* English */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C01FCF4B08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Timer_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Timer;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = app;
+				ZERO_LINK = YES;
+			};
+			name = Debug;
+		};
+		C01FCF4C08A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Timer_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "$(HOME)/Applications";
+				PRODUCT_NAME = Timer;
+				SDKROOT = macosx;
+				VALID_ARCHS = x86_64;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Anders Hovmoller";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = macosx;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4B08A954540054247B /* Debug */,
+				C01FCF4C08A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Timer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}

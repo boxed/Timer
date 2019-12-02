@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dictionary SYSTEM "file://localhost/System/Library/DTDs/sdef.dtd">
+<dictionary title="TimerTimer Terminology">
+	<suite name="Timer Scripting" code="Timr" description="Commands and classes for Timer Scripting.">
+		<class name="application" code="capp" description="Adding to application delegate.">
+			<cocoa class="NSApplication"/>
+		</class>
+	</suite>
+</dictionary>

@@ -1,0 +1,10 @@
+/* time up message, is formatted with standard C API (use %d), first minutes then seconds */
+"time_up" = "En timer på %d minuter och %d sekunder har nått sitt slut";
+/* warning message when quitting application that has timers running */
+"running_timers_quit_warning" = "Du har aktiva timers. Avslutar du programmet stoppas alla timers.";
+/* Quit the application? */
+"quit_app_question" = "Avsluta?";
+/* Cancel */
+"cancel" = "Avsluta inte";
+/* Quit */
+"quit" = "Avsluta";
