@@ -28,12 +28,12 @@ static NSColor* backgroundColor = NULL;
 }
 
 - (id)initWithContentRect:(NSRect)contentRect 
-                styleMask:(NSUInteger)styleMask 
+                styleMask:(NSWindowStyleMask)styleMask
                   backing:(NSBackingStoreType)bufferingType 
                     defer:(BOOL)flag 
 {
     if (self = [super initWithContentRect:contentRect 
-                                styleMask:NSBorderlessWindowMask 
+                                styleMask:NSWindowStyleMaskBorderless
                                   backing:bufferingType 
                                     defer:flag]) {
         

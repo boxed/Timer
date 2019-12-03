@@ -24,6 +24,8 @@ static NSColor* sweepColor = nil;
 - init
 {
     if (self = [super init]) {
+        self.window.collectionBehavior = NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary | NSWindowCollectionBehaviorStationary;
+        
 		radians = -PI/2;
 		[NSThread detachNewThreadSelector:@selector(animator:) toTarget:self withObject:nil];
 	}
@@ -33,18 +35,18 @@ static NSColor* sweepColor = nil;
 - (void)animator:(id)sender
 {
 	[NSThread setThreadPriority:0.1];
-	NSAutoreleasePool* autoreleasepool = [[NSAutoreleasePool alloc] init];
 	
 	while(true)
 	{
+        NSAutoreleasePool* autoreleasepool = [[NSAutoreleasePool alloc] init];
 		struct timespec ts;
 		ts.tv_sec = [[self window] isVisible]?0:1;
         ts.tv_nsec = 200000;
         nanosleep(&ts, NULL);
 		[self performSelectorOnMainThread:@selector(update:) withObject:self waitUntilDone:FALSE];
+        [autoreleasepool release];
 	}
 	
-	[autoreleasepool release];
 }
 
 - (void)update:(id)sender

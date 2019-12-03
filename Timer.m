@@ -77,7 +77,7 @@ static DesktopWindow* sweeper = nil;
 {
 	int i;
 	int indexToRemove = -1;
-	int count = [counters count];
+	NSUInteger count = [counters count];
 	for (i = 0; i < count; i++)
 	{
 		if (indexToRemove == -1)
@@ -108,7 +108,7 @@ static DesktopWindow* sweeper = nil;
 	NSMutableIndexSet *indexes = [NSMutableIndexSet indexSet];
 	
 	int i;
-	int count = [counters count];
+	NSUInteger count = [counters count];
 	for (i = 0; i < count; i++)
 	{
 		if ([[counters objectAtIndex:i] overdue])

@@ -9,7 +9,7 @@
 	
 	NSRect frame = [[NSScreen screens][screenIndex] frame];
 	
-	if ((self = [super initWithContentRect:frame styleMask:NSBorderlessWindowMask backing:NSBackingStoreBuffered defer:FALSE]) != nil)
+    if ((self = [super initWithContentRect:frame styleMask:NSWindowStyleMaskBorderless backing:NSBackingStoreBuffered defer:FALSE]) != nil)
 	{
 		[self setLevel:kCGDesktopWindowLevel];
 		[self setIgnoresMouseEvents:TRUE];
