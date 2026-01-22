@@ -26,11 +26,65 @@ static DesktopWindow* sweeper = nil;
 {
     if (self = [super init]) {
 		[[NSApplication sharedApplication] setDelegate:self];
-		
+
 		counters = [[NSMutableArray alloc] init];
 		originalIcon = [[NSApp applicationIconImage] copy];
 	}
     return self;
+}
+
+- (void)updateColorsForAppearance
+{
+	// Determine if we're in dark mode
+	BOOL isDark = NO;
+	NSAppearanceName appearanceName = [[NSApp effectiveAppearance] bestMatchFromAppearancesWithNames:@[NSAppearanceNameAqua, NSAppearanceNameDarkAqua]];
+	isDark = [appearanceName isEqualToString:NSAppearanceNameDarkAqua];
+
+	NSColor *labelColor = isDark ? [NSColor whiteColor] : [NSColor blackColor];
+	NSColor *inputBgColor = isDark ? [NSColor colorWithWhite:0.2 alpha:1.0] : [NSColor whiteColor];
+	NSColor *inputTextColor = isDark ? [NSColor whiteColor] : [NSColor blackColor];
+
+	// Update input field
+	[time setBackgroundColor:inputBgColor];
+	[time setTextColor:inputTextColor];
+	[time setNeedsDisplay:YES];
+
+	// Find the minutes label by looking through subviews if outlet not connected
+	NSTextField *label = minutesLabel;
+	if (!label) {
+		for (NSView *view in [[window contentView] subviews]) {
+			if ([view isKindOfClass:[NSTextField class]]) {
+				NSTextField *tf = (NSTextField *)view;
+				if ([[tf stringValue] containsString:@"inute"]) {
+					label = tf;
+					break;
+				}
+			}
+		}
+	}
+
+	if (label) {
+		[label setTextColor:labelColor];
+		[label setNeedsDisplay:YES];
+	}
+}
+
+- (void)awakeFromNib
+{
+	[self updateColorsForAppearance];
+
+	// Use distributed notification for system appearance changes
+	[[NSDistributedNotificationCenter defaultCenter] addObserver:self
+														selector:@selector(appearanceChanged:)
+															name:@"AppleInterfaceThemeChangedNotification"
+														  object:nil];
+}
+
+- (void)appearanceChanged:(NSNotification *)notification
+{
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[self updateColorsForAppearance];
+	});
 }
 
 - (float)secondsFromGui

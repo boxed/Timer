@@ -1,4 +1,5 @@
 #import "FlatView.h"
+#import "ThemeColors.h"
 
 @implementation FlatView
 
@@ -12,8 +13,13 @@
 
 - (void)drawRect:(NSRect)rect
 {
-	[[NSColor whiteColor] set];
+	[[ThemeColors flatViewBackgroundColor] set];
 	[NSBezierPath fillRect:rect];
+}
+
+- (void)viewDidChangeEffectiveAppearance
+{
+	[self setNeedsDisplay:YES];
 }
 
 @end

@@ -7,19 +7,13 @@
 //
 
 #import "SweeperView.h"
+#import "ThemeColors.h"
 #import <math.h>
 #import <time.h>
 
 #define PI 3.14145
 
-static NSColor* sweepColor = nil;
-
 @implementation SweeperView
-
-+ (void)initialize
-{
-	sweepColor = [[NSColor colorWithCalibratedRed:1 green:0 blue:0 alpha:1] retain];
-}
 
 - init
 {
@@ -74,7 +68,7 @@ static NSColor* sweepColor = nil;
 	//[foo setLineWidth:lineWidth];
 	//[foo stroke];
 	
-	[sweepColor set];
+	[[ThemeColors sweepColor] set];
 	[NSBezierPath fillRect:NSMakeRect(x-lineWidth/2, 0, lineWidth, inRect.size.height)];
 	
 	[self setNeedsDisplay:FALSE];

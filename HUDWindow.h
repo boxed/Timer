@@ -11,6 +11,7 @@
 
 @interface HUDWindow : NSPanel {
     BOOL forceDisplay;
+    NSTextField *titleLabel;
 }
 
 - (NSColor *)sizedHUDBackground;

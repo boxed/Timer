@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5BA3796D23951A5500492FA5 /* DesktopWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA3796C23951A5500492FA5 /* DesktopWindow.m */; };
+		5BC1A00026D8000000000001 /* ThemeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BC1A00026D8000000000003 /* ThemeColors.m */; };
 		8D11072A0486CEB800E47090 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = 29B97318FDCFA39411CA2CEA /* MainMenu.nib */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
@@ -75,6 +76,8 @@
 		AE4F2BEC0CDDC6EA005D5F62 /* logo2-padded.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo2-padded.png"; sourceTree = "<group>"; };
 		AE4F2BED0CDDC6EA005D5F62 /* Picture-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Picture-4.png"; sourceTree = "<group>"; };
 		AE9FE59B12F8A08000F2838A /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		5BC1A00026D8000000000002 /* ThemeColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeColors.h; sourceTree = "<group>"; };
+		5BC1A00026D8000000000003 /* ThemeColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeColors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +141,8 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				5BC1A00026D8000000000002 /* ThemeColors.h */,
+				5BC1A00026D8000000000003 /* ThemeColors.m */,
 				5BA3796B23951A5500492FA5 /* DesktopWindow.h */,
 				5BA3796C23951A5500492FA5 /* DesktopWindow.m */,
 				AE4F2BA60CDD43CE005D5F62 /* CountDownView.h */,
@@ -213,7 +218,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1120;
+				LastUpgradeCheck = 1310;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Timer" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -261,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
+				5BC1A00026D8000000000001 /* ThemeColors.m in Sources */,
 				AE4F2BB20CDD43CE005D5F62 /* CountDownView.m in Sources */,
 				AE4F2BB30CDD43CE005D5F62 /* FlatButton.m in Sources */,
 				AE4F2BB40CDD43CE005D5F62 /* HUDWindow.m in Sources */,
@@ -318,7 +324,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.timer;
 				PRODUCT_NAME = Timer;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 				ZERO_LINK = YES;
 			};
@@ -336,7 +341,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.kodare.timer;
 				PRODUCT_NAME = Timer;
 				SDKROOT = macosx;
-				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -357,6 +361,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -393,6 +398,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

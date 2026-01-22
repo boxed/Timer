@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" rightStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="602" y="415" width="245" height="57"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1200" height="1897"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <value key="minSize" type="size" width="203" height="45"/>
             <view key="contentView" id="2">
                 <rect key="frame" x="0.0" y="0.0" width="245" height="57"/>
@@ -39,8 +40,8 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="left" title="15" drawsBackground="YES" id="359">
                             <font key="font" metaFont="system"/>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
                             <action selector="start:" target="209" id="222"/>
@@ -57,12 +58,12 @@
 
 
 </string>
-                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="backgroundColor" red="1" green="0.95548701000000003" blue="0.99726241999999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="321" customClass="RoundCloseButton">
-                        <rect key="frame" x="3" y="38" width="13" height="15"/>
+                        <rect key="frame" x="6" y="40" width="13" height="13"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="smallSquare" title="Button" bezelStyle="smallSquare" alignment="center" borderStyle="border" inset="2" id="361">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -280,6 +281,7 @@ Gw
                 <outlet property="closeButton" destination="321" id="334"/>
                 <outlet property="defaults" destination="268" id="282"/>
                 <outlet property="help" destination="311" id="314"/>
+                <outlet property="minutesLabel" destination="220" id="400"/>
                 <outlet property="preferences" destination="257" id="259"/>
                 <outlet property="startButton" destination="204" id="213"/>
                 <outlet property="time" destination="205" id="212"/>
@@ -290,7 +292,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="890" y="472" width="375" height="217"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1200" height="1897"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <value key="minSize" type="size" width="195.71799999999999" height="50"/>
             <view key="contentView" id="258">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="217"/>
@@ -423,7 +425,7 @@ Gw
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="884" y="119" width="493" height="286"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1200" height="1897"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="312">
                 <rect key="frame" x="0.0" y="0.0" width="493" height="286"/>
@@ -450,7 +452,7 @@ You can just press enter to start a timer instead of clicking the start button. 
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="350" y="609" width="412" height="333"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1200" height="1897"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1415"/>
             <value key="minSize" type="size" width="213" height="107"/>
             <view key="contentView" id="342">
                 <rect key="frame" x="0.0" y="0.0" width="412" height="333"/>

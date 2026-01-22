@@ -1,28 +1,10 @@
 #import "CountDownView.h"
 #import "Timer.h"
 #import "RoundCloseButton.h"
+#import "ThemeColors.h"
 #include <IOKit/pwr_mgt/IOPMKeys.h>
 
 @implementation CountDownView
-
-static NSColor* finishedTopColor = nil;
-static NSColor* finishedBottomColor = nil;
-static NSColor* runningTopColor = nil;
-static NSColor* runningBottomColor = nil;
-static NSColor* emptyTopColor = nil;
-static NSColor* emptyBottomColor = nil;
-
-+ (void)initialize
-{
-	finishedTopColor = [[NSColor colorWithDeviceRed:1 green:0.3 blue:0.3 alpha:1] retain];
-	finishedBottomColor = [NSColor redColor];
-	
-	runningTopColor = [[NSColor colorWithDeviceRed:0.6 green:0.75 blue:0.91 alpha:1] retain];
-	runningBottomColor = [[NSColor colorWithDeviceRed:0.4 green:0.66 blue:0.96 alpha:1] retain];
-	
-	emptyTopColor = [[NSColor colorWithDeviceWhite:0.88 alpha:1] retain];
-	emptyBottomColor = [[NSColor colorWithDeviceWhite:0.94 alpha:1] retain];
-}
 
 - (id)initWithRect:(NSRect)frameRect seconds:(int)inSeconds title:(NSString*)inTitle titleIsDefault:(BOOL)inTitleIsDefault
 {
@@ -117,10 +99,10 @@ static NSColor* emptyBottomColor = nil;
 	fillAreaTop.origin.y += fillAreaTop.size.height;
 	
 	// draw empty area
-	[emptyBottomColor set];
+	[[ThemeColors emptyBottomColor] set];
 	[NSBezierPath fillRect:fillAreaBottom];
-	
-	[emptyTopColor set];
+
+	[[ThemeColors emptyTopColor] set];
 	[NSBezierPath fillRect:fillAreaTop];
 	
 	// draw fill area
@@ -128,21 +110,21 @@ static NSColor* emptyBottomColor = nil;
 	fillAreaTop.size.width = fillWidth;
 	
 	if (currentSeconds <= 0)
-		[finishedBottomColor set];
+		[[ThemeColors finishedBottomColor] set];
 	else
-		[runningBottomColor set];
-	
+		[[ThemeColors runningBottomColor] set];
+
 	[NSBezierPath fillRect:fillAreaBottom];
-	
+
 	if (currentSeconds <= 0)
-		[finishedTopColor set];
+		[[ThemeColors finishedTopColor] set];
 	else
-		[runningTopColor set];
-	
+		[[ThemeColors runningTopColor] set];
+
 	[NSBezierPath fillRect:fillAreaTop];
 	
 	[NSBezierPath setDefaultLineWidth:1];
-	[[NSColor lightGrayColor] set];
+	[[ThemeColors progressBorderColor] set];
 	NSRect strokeBounds = originalBounds;
 	strokeBounds.size.width;
 	strokeBounds.size.height -= 6;
@@ -175,6 +157,11 @@ static NSColor* emptyBottomColor = nil;
 	
 	//[text setTextColor:[NSColor whiteColor]];
 	[text setStringValue:s];
+}
+
+- (void)viewDidChangeEffectiveAppearance
+{
+	[self setNeedsDisplay:YES];
 }
 
 @end

@@ -9,6 +9,7 @@
     IBOutlet NSButton* startButton;
 	IBOutlet RoundCloseButton* closeButton;
     IBOutlet NSTextField* time;
+	IBOutlet NSTextField* minutesLabel;
 	IBOutlet NSWindow* window;
 	IBOutlet NSWindow* preferences;
 	IBOutlet NSWindow* help;

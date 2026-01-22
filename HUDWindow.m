@@ -7,25 +7,9 @@
 //
 
 #import "HUDWindow.h"
+#import "ThemeColors.h"
 
 @implementation HUDWindow
-
-static NSColor* titlebarColor = NULL;
-static NSColor* titlebarColor2 = NULL;
-
-static NSColor* focusedTitlebarColor = NULL;
-static NSColor* focusedTitlebarColor2 = NULL;
-
-static NSColor* backgroundColor = NULL;
-
-+ (void)initialize
-{
-	titlebarColor = [[NSColor colorWithCalibratedWhite:0.65 alpha:1] retain];
-	titlebarColor2 = [[NSColor colorWithCalibratedWhite:0.60 alpha:1] retain];
-	focusedTitlebarColor = [[NSColor colorWithCalibratedWhite:0.55 alpha:1] retain];
-	focusedTitlebarColor2 = [[NSColor colorWithCalibratedWhite:0.50 alpha:1] retain];
-	backgroundColor = [[NSColor colorWithCalibratedWhite:0.9 alpha:1] retain];
-}
 
 - (id)initWithContentRect:(NSRect)contentRect 
                 styleMask:(NSWindowStyleMask)styleMask
@@ -45,11 +29,30 @@ static NSColor* backgroundColor = NULL;
         forceDisplay = NO;
         [self setBackgroundColor:[self sizedHUDBackground]];
 	
-        [[NSNotificationCenter defaultCenter] addObserver:self 
-                                                 selector:@selector(windowDidResize:) 
-                                                     name:NSWindowDidResizeNotification 
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(windowDidResize:)
+                                                     name:NSWindowDidResizeNotification
                                                    object:self];
-        
+
+        // Use distributed notification for system appearance changes
+        [[NSDistributedNotificationCenter defaultCenter] addObserver:self
+                                                            selector:@selector(appearanceChanged:)
+                                                                name:@"AppleInterfaceThemeChangedNotification"
+                                                              object:nil];
+
+        // Create title label
+        titleLabel = [[NSTextField alloc] initWithFrame:NSZeroRect];
+        [titleLabel setBezeled:NO];
+        [titleLabel setDrawsBackground:NO];
+        [titleLabel setEditable:NO];
+        [titleLabel setSelectable:NO];
+        [titleLabel setTextColor:[NSColor whiteColor]];
+        [titleLabel setFont:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSRegularControlSize]]];
+        [titleLabel setAlignment:NSCenterTextAlignment];
+        [titleLabel setLineBreakMode:NSLineBreakByTruncatingTail];
+        [[self contentView] addSubview:titleLabel];
+        [self updateTitleLabel];
+
         return self;
     }
     return nil;
@@ -57,13 +60,42 @@ static NSColor* backgroundColor = NULL;
 
 - (void)dealloc
 {
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResizeNotification object:self];    
+    [[NSDistributedNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResizeNotification object:self];
+    [titleLabel release];
     [super dealloc];
+}
+
+- (void)appearanceChanged:(NSNotification *)notification
+{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setBackgroundColor:[self sizedHUDBackground]];
+        [self display];
+    });
+}
+
+- (void)updateTitleLabel
+{
+    float titlebarHeight = 21.0;
+    NSRect contentRect = [[self contentView] bounds];
+    // Position in titlebar area: 19px from left, centered vertically in titlebar
+    NSRect labelFrame;
+    labelFrame.origin.x = 19.0;
+    labelFrame.origin.y = contentRect.size.height - titlebarHeight + (titlebarHeight - 17.0) / 2.0;
+    labelFrame.size.width = contentRect.size.width - 38.0;
+    labelFrame.size.height = 17.0;
+    [titleLabel setFrame:labelFrame];
+    [titleLabel setStringValue:[self title] ?: @""];
+
+    // Ensure titleLabel is on top of other subviews
+    [titleLabel removeFromSuperview];
+    [[self contentView] addSubview:titleLabel positioned:NSWindowAbove relativeTo:nil];
 }
 
 - (void)windowDidResize:(NSNotification *)aNotification
 {
     [self setBackgroundColor:[self sizedHUDBackground]];
+    [self updateTitleLabel];
     if (forceDisplay) {
         [self display];
     }
@@ -79,8 +111,15 @@ static NSColor* backgroundColor = NULL;
 - (NSColor *)sizedHUDBackground
 {
     float titlebarHeight = 21.0;
-    NSImage *bg = [[NSImage alloc] initWithSize:[self frame].size];
+    NSSize frameSize = [self frame].size;
+    frameSize.width = floor(frameSize.width);
+    frameSize.height = floor(frameSize.height);
+    NSImage *bg = [[NSImage alloc] initWithSize:frameSize];
     [bg lockFocus];
+
+    // Set the current appearance so dynamic colors resolve correctly
+    NSAppearance *savedAppearance = [NSAppearance currentAppearance];
+    [NSAppearance setCurrentAppearance:[NSApp effectiveAppearance]];
     
     // Make background path
     NSRect bgRect = NSMakeRect(0, 0, [bg size].width, [bg size].height - titlebarHeight);
@@ -114,11 +153,11 @@ static NSColor* backgroundColor = NULL;
     [bgPath closePath];
     
     // Composite background color into bg
-	[backgroundColor set];
+	[[ThemeColors windowBackgroundColor] set];
 	[bgPath fill];
     
     // Make titlebar path
-    NSRect titlebarRect = NSMakeRect(0, [bg size].height - titlebarHeight, [bg size].width, titlebarHeight);
+    NSRect titlebarRect = NSMakeRect(0, round([bg size].height - titlebarHeight), round([bg size].width), titlebarHeight);
     minX = NSMinX(titlebarRect);
     midX = NSMidX(titlebarRect);
     maxX = NSMaxX(titlebarRect);
@@ -145,38 +184,22 @@ static NSColor* backgroundColor = NULL;
     
     // Titlebar
 	if ([self isKeyWindow])
-		[focusedTitlebarColor set];
+		[[ThemeColors focusedTitlebarColor] set];
 	else
-		[titlebarColor set];
+		[[ThemeColors titlebarColor] set];
     [titlePath fill];
-	
+
 	NSRect titlebarRect2 = titlebarRect;
 	if ([self isKeyWindow])
-		[focusedTitlebarColor2 set];
+		[[ThemeColors focusedTitlebarColor2] set];
 	else
-		[titlebarColor2 set];
-    titlebarRect2.size.height /= 2;
+		[[ThemeColors titlebarColor2] set];
+    titlebarRect2.size.height = floor(titlebarRect2.size.height / 2);
 	[NSBezierPath fillRect:titlebarRect2];
-    
-    // Title
-    NSFont *titleFont = [NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSRegularControlSize]];
-    NSMutableParagraphStyle *paraStyle = [[[NSMutableParagraphStyle alloc] init] autorelease];
-    [paraStyle setParagraphStyle:[NSParagraphStyle defaultParagraphStyle]];
-    [paraStyle setAlignment:NSCenterTextAlignment];
-    [paraStyle setLineBreakMode:NSLineBreakByTruncatingTail];
-    NSMutableDictionary *titleAttrs = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-        titleFont, NSFontAttributeName,
-        [NSColor whiteColor], NSForegroundColorAttributeName,
-        [[paraStyle copy] autorelease], NSParagraphStyleAttributeName,
-        nil];
-    
-    NSSize titleSize = [[self title] sizeWithAttributes:titleAttrs];
-    // We vertically centre the title in the titlbar area, and we also horizontally 
-    // inset the title by 19px, to allow for the 3px space from window's edge to close-widget, 
-    // plus 13px for the close widget itself, plus another 3px space on the other side of 
-    // the widget.
-    NSRect titleRect = NSInsetRect(titlebarRect, 19.0, (titlebarRect.size.height - titleSize.height) / 2.0);
-    [[self title] drawInRect:titleRect withAttributes:titleAttrs];
+
+    // Restore the previous appearance
+    [NSAppearance setCurrentAppearance:savedAppearance];
+
     [bg unlockFocus];
     
     return [NSColor colorWithPatternImage:[bg autorelease]];
@@ -197,10 +220,10 @@ static NSColor* backgroundColor = NULL;
 	[self display];
 }
 
-- (void)setTitle:(NSString *)value 
+- (void)setTitle:(NSString *)value
 {
     [super setTitle:value];
-    [self windowDidResize:nil];
+    [self updateTitleLabel];
 }
 
 - (BOOL)canBecomeKeyWindow

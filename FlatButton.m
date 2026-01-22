@@ -1,4 +1,5 @@
 #import "FlatButton.h"
+#import "ThemeColors.h"
 
 @implementation FlatButton
 
@@ -43,7 +44,7 @@
 	if ([[self window] firstResponder] == self)
 		[[NSColor selectedControlColor] set];
 	else
-		[[NSColor whiteColor] set];
+		[[ThemeColors buttonBorderColor] set];
 	
 	[bgPath stroke];
 	
@@ -56,7 +57,7 @@
     
 	NSMutableDictionary* titleAttrs = [[NSMutableDictionary dictionaryWithObjectsAndKeys:
         [self font], NSFontAttributeName,
-        [NSColor whiteColor], NSForegroundColorAttributeName,
+        [ThemeColors buttonTextColor], NSForegroundColorAttributeName,
         [paragraphStyle autorelease], NSParagraphStyleAttributeName,
         nil] retain];
     
@@ -77,6 +78,11 @@
 - (BOOL)acceptsFirstResponder
 {
 	return YES;
+}
+
+- (void)viewDidChangeEffectiveAppearance
+{
+	[self setNeedsDisplay:YES];
 }
 
 @end
